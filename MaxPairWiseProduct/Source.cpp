@@ -1,28 +1,26 @@
-#include <vector> 
-#include <iostream> 
-#include <algorithm> 
+#include <vector>
+#include <iostream>
+#include <algorithm>
+
 using namespace std;
-void print(std::vector<int> const& input)
-{
-    for (int i = 0; i < input.size(); i++) {
-        std::cout << input.at(i) << '   ';
-    }
+
+void print(std::vector<size_t> const& input) {
+    for (size_t i = 0; i < input.size(); i++)
+        std::cout << input.at(i) << "   ";
 }
 
-int main()
-{
-   
-    vector<int> seq;
+int main(void) {
+    vector<size_t> seq;
     int n;
 
     // Read the nb of elements in vect
-    cout << "please enter the number of elements in sequence"<<endl;
+    cout << "please enter the number of elements in sequence" << endl;
     cin >> n;
 
-    // Read the vector 
-    cout << "please enter the elements of the sequence"<<endl;
-    for (int i = 0; i < n; i++)
-    {
+    // Read the vector
+    cout << "please enter the elements of the sequence" << endl;
+
+    for (int i = 0; i < n; i++) {
         int input;
         cin >> input;
         seq.push_back(input);
@@ -36,7 +34,7 @@ int main()
     cout <<endl<< "First Maximum Element is" << endl<< FisrtMax;
 
     // remove the found element
-    std::vector<int>::iterator PosF = find(seq.begin(), seq.end(), FisrtMax);
+    auto PosF = find(seq.begin(), seq.end(), FisrtMax);
     seq.erase(PosF);
 
     cout <<endl<< "sequence After removing the 1st maximum element" << endl;
